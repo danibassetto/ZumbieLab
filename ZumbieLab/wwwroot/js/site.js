@@ -1,20 +1,5 @@
 ﻿$(document).ready(function () {
-    getDataTable('#contact-table')
     getDataTable('#user-table')
-
-    $('.btn-total-contatos').click(function () {
-        var userId = $(this).attr('user-id');
-
-        $.ajax({
-            type: 'GET',
-            url: '/User/GetByUserId?userId=' + userId,
-            success: function (result) {
-                $("#listContactUser").html(result);
-                $('#modalContactUser').modal('show');
-                getDataTable('#contact-user-table');
-            }
-        });
-    });
 });
 
 function getDataTable(id) {
@@ -65,13 +50,3 @@ $(document).ready(function () {
         }
     });
 });
-
-function formatarTelefone(input) {
-    let phone = input.value.replace(/\D/g, '');
-
-    if (phone.length === 11) {
-        input.value = `(${phone.slice(0, 2)}) ${phone.slice(2, 7)}-${phone.slice(7)}`;
-    } else {
-        input.value = `(${phone.slice(0, 2)}) ${phone.slice(2, 6)}-${phone.slice(6)}`;
-    }
-}

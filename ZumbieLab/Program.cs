@@ -24,6 +24,7 @@ builder.Services.AddScoped<IEmail, Email>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IGameRepository, GameRepository>();
 builder.Services.AddScoped<ISportRepository, SportRepository>();
+builder.Services.AddScoped<IMusicalTasteRepository, MusicalTasteRepository>();
 #endregion
 
 builder.Services.AddSession(o =>

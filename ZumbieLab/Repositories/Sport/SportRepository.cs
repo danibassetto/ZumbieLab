@@ -47,7 +47,7 @@ namespace ZumbieLab.Repositories
             SportModel updateSport = Get(Sport.Id);
 
             if (updateSport == null)
-                throw new Exception("Jogo inválido ou inexistente");
+                throw new Exception("Esporte inválido ou inexistente");
 
             updateSport.Description = Sport.Description;
 

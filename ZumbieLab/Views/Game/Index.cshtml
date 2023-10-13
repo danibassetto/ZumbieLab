@@ -1,15 +1,15 @@
 ﻿<!DOCTYPE html>
 <html>
     <head>
-        @model List<UserModel>
+        @model List<GameModel>
         @{
-            ViewData["Title"] = "Listagem de Usuários";
+            ViewData["Title"] = "Listagem de Jogos";
         }
     </head>
     <body>
         <div class="text-center">
             <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-1">
-                <a class="btn btn-primary" role="button" asp-controller="User" asp-action="Create">Adicionar novo usuário</a>
+                <a class="btn btn-primary" role="button" asp-controller="Game" asp-action="Create">Adicionar novo jogo</a>
             </div>
 
             @if (TempData["SuccessMessage"] != null)
@@ -29,36 +29,28 @@
             }
 
             <br />
-            <h1 class="display-4">Listagem de Usuários</h1>
+            <h1 class="display-4">Listagem de Jogos</h1>
 
-            <table class="table" id="user-table">
+            <table class="table" id="game-table">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Nome</th>
-                        <th scope="col">Login</th>
-                        <th scope="col">E-mail</th>
-                        <th scope="col">Data de cadastro</th>
-                        <th scope="col">Data de alteração</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
                     @if (Model != null && Model.Any())
                     {
-                        @foreach (UserModel user in Model)
+                        @foreach (GameModel game in Model)
                         {
                             <tr>
-                                <th scope="row">@user.Id</th>
-                                <td>@user.Name</td>
-                                <td>@user.Login</td>
-                                <td>@user.Email</td>
-                                <td>@user.RegistrationDate</td>
-                                <td>@(user.ChangeDate != null ? user.ChangeDate.ToString() : "N/A")</td>
+                                <th scope="row">@game.Id</th>
+                                <td>@game.Name</td>
                                 <td>
                                     <div class="btn-group" role="group">
-                                        <a role="button" class="btn btn-primary" asp-route-id="@user.Id" asp-controller="User" asp-action="Update">Editar</a>
-                                        <a role="button" class="btn btn-danger" asp-route-id="@user.Id" asp-controller="User" asp-action="DeleteConfirmation">Excluir</a>
+                                        <a role="button" class="btn btn-primary" asp-route-id="@game.Id" asp-controller="Game" asp-action="Update">Editar</a>
+                                        <a role="button" class="btn btn-danger" asp-route-id="@game.Id" asp-controller="Game" asp-action="DeleteConfirmation">Excluir</a>
                                     </div>
                                 </td>
                             </tr>
@@ -68,10 +60,7 @@
                     {
                         <tr class="odd">
                             <th></th>
-                            <td></td>
-                            <td></td>
-                            <td>Nenhum usuário cadastrado</td>
-                            <td></td>
+                            <td>Nenhum jogo cadastrado</td>
                             <td></td>
                         </tr>
                     }

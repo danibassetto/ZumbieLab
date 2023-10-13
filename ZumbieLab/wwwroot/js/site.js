@@ -1,5 +1,6 @@
 ﻿$(document).ready(function () {
     getDataTable('#user-table')
+    getDataTable('#game-table')
 });
 
 function getDataTable(id) {

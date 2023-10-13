@@ -23,6 +23,7 @@ builder.Services.AddScoped<ZumbieLab.Helpers.ISession, Session>();
 builder.Services.AddScoped<IEmail, Email>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IGameRepository, GameRepository>();
+builder.Services.AddScoped<ISportRepository, SportRepository>();
 #endregion
 
 builder.Services.AddSession(o =>

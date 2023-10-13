@@ -1,6 +1,7 @@
 ﻿$(document).ready(function () {
     getDataTable('#user-table')
     getDataTable('#game-table')
+    getDataTable('#sport-table')
 });
 
 function getDataTable(id) {

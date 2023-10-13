@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        @model SportModel
+        @{
+            ViewData["Title"] = "Editar Esporte";
+        }
+    </head>
+    <body>
+        <div class="text-center">
+            <h1 class="display-4">Editar Jogo</h1>
+        </div>
+
+        <form asp-controller="Sport" asp-action="Update" method="post">
+
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group mb-3">
+                <label for="description">Descrição</label> @Html.ValidationMessageFor(x => x.Description)
+                <input type="text" asp-for="Description" class="form-control" placeholder="Informe a descrição">
+            </div>
+
+
+            <button type="submit" class="btn btn-primary d-block w-100 mb-3">Alterar</button>
+            <a class="btn btn-danger d-block w-100 mb-3" role="button" asp-controller="Sport" asp-action="Index">Cancelar</a>
+        </form>
+    </body>
+</html>

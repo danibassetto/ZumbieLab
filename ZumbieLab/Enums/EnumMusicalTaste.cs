@@ -1,14 +1,26 @@
-﻿namespace ZumbieLab.Enums
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ZumbieLab.Enums
 {
     public enum EnumMusicalTaste
     {
-        Pop, 
-        Rock, 
+        [Display(Name = "Pop")]
+        Pop,
+        [Display(Name = "Rock")]
+        Rock,
+        [Display(Name = "Pagode")]
         Pagode,
-        Sertanejo,
-        HipHopRap, 
-        Eletrônica,
+        [Display(Name = "Sertanejo")]
+        Countryside,
+        [Display(Name = "Hip-Hop/Rap")]
+        HipHopRap,
+        [Display(Name = "Eletrônica")]
+        Electronics,
+        [Display(Name = "Funk")]
         Funk,
-        Metal
+        [Display(Name = "Metal")]
+        Metal,
+        [Display(Name = "Demais gêneros estranhos")]
+        Other
     }
 }

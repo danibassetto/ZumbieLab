@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        @model HostModel
+        @{
+            ViewData["Title"] = "Confirmação excluir hospedeiro";
+        }
+    </head>
+    <body>
+        <div class="text-center">
+            <h3>Realmente deseja excluir o hospedeiro?</h3>
+
+            <a class="btn btn-primary d-block w-100 mb-3" asp-controller="Host" asp-action="Delete" asp-route-id="@Model.Id">Confirmar</a>
+            <a class="btn btn-danger d-block w-100 mb-3" asp-controller="Host" asp-action="Index">Cancelar</a>
+        </div>
+    </body>
+</html>

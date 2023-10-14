@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using ZumbieLab.Enums;
 
-namespace ZumbieLab.Models.Zumbie
+namespace ZumbieLab.Models
 {
     public class HostModel
     {

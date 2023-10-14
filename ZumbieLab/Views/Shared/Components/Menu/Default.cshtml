@@ -1,7 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.2/css/all.min.css">
     @model UserModel
 </head>
 <body>
@@ -15,6 +14,11 @@
                 <li class="nav-item">
                     <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link text-truncate" style="color: white;">
                         <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a asp-area="" asp-controller="Host" asp-action="Index" class="nav-link text-truncate" style="color: white;">
+                        <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Hospedeiro</span>
                     </a>
                 </li>
             </ul>

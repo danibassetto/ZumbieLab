@@ -22,6 +22,7 @@ builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<ZumbieLab.Helpers.ISession, Session>();
 builder.Services.AddScoped<IEmail, Email>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IHostRepository, HostRepository>();
 #endregion
 
 builder.Services.AddSession(o =>

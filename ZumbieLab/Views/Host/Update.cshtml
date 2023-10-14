@@ -1,0 +1,107 @@
+﻿@using System.ComponentModel.DataAnnotations;
+@using System.Reflection;
+@using ZumbieLab.Enums;
+<!DOCTYPE html>
+<html>
+    <head>
+        @model HostModel
+        @{
+            ViewData["Title"] = "Editar hospedeiro";
+        }
+    </head>
+    <body>
+        <div class="text-center">
+            <h1 class="display-4">Editar Usuário</h1>
+        </div>
+
+        <form asp-controller="Host" asp-action="Update" method="post">
+
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group mb-3">
+                <label for="age">Idade</label> @Html.ValidationMessageFor(x => x.Age)
+                <input type="number" asp-for="Age" class="form-control" placeholder="Informe a idade">
+            </div>
+            <div class="form-group mb-3">
+                <label for="gender">Sexo</label> @Html.ValidationMessageFor(x => x.Gender)
+                <select asp-for="Gender" class="form-control">
+                    <option value="">Selecione</option>
+                    <option value="@EnumGender.F">Feminino</option>
+                    <option value="@EnumGender.M">Masculino</option>
+                </select>
+            </div>
+            <div class="form-group mb-3">
+                <label for="weight">Peso</label> @Html.ValidationMessageFor(x => x.Weight)
+                <input type="number" asp-for="Weight" class="form-control" placeholder="Informe o peso">
+            </div>
+            <div class="form-group mb-3">
+                <label for="height">Altura</label> @Html.ValidationMessageFor(x => x.Height)
+                <input type="number" asp-for="Height" class="form-control" placeholder="Informe a altura">
+            </div>
+            <div class="form-group mb-3">
+                <label for="bloodType">Tipo Sanguíneo</label> @Html.ValidationMessageFor(x => x.BloodType)
+                <select asp-for="BloodType" class="form-control">
+                    <option value="">Selecione</option>
+                    <option value="@EnumBloodType.A">A</option>
+                    <option value="@EnumBloodType.B">B</option>
+                    <option value="@EnumBloodType.O">O</option>
+                    <option value="@EnumBloodType.AB">AB</option>
+                </select>
+            </div>
+            <div class="form-group mb-3">
+                <label for="musicalTaste">Gosto Musical</label> @Html.ValidationMessageFor(x => x.MusicalTaste)
+                <select asp-for="MusicalTaste" class="form-control">
+                    <option value="">Selecione</option>
+                    @foreach (var musicalTaste in Enum.GetValues(typeof(EnumMusicalTaste)))
+                    {
+                        var displayAttribute = musicalTaste.GetType()
+                        .GetMember(musicalTaste.ToString())
+                        .First()
+                        .GetCustomAttribute<DisplayAttribute>();
+
+                        string displayName = displayAttribute != null ? displayAttribute.Name : musicalTaste.ToString();
+
+                        <option value="@musicalTaste">@displayName</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group mb-3">
+                <label for="sportPlayed">Esporte Praticado</label> @Html.ValidationMessageFor(x => x.SportPlayed)
+                <select asp-for="SportPlayed" class="form-control">
+                    <option value="">Selecione</option>
+                    @foreach (var sport in Enum.GetValues(typeof(EnumSportPlayed)))
+                    {
+                        var displayAttribute = sport.GetType()
+                        .GetMember(sport.ToString())
+                        .First()
+                        .GetCustomAttribute<DisplayAttribute>();
+
+                        string displayName = displayAttribute != null ? displayAttribute.Name : sport.ToString();
+
+                        <option value="@sport">@displayName</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group mb-3">
+                <label for="favoriteGame">Jogo Preferido</label> @Html.ValidationMessageFor(x => x.FavoriteGame)
+                <select asp-for="FavoriteGame" class="form-control">
+                    <option value="">Selecione</option>
+                    @foreach (var game in Enum.GetValues(typeof(EnumFavoriteGame)))
+                    {
+                        var displayAttribute = game.GetType()
+                        .GetMember(game.ToString())
+                        .First()
+                        .GetCustomAttribute<DisplayAttribute>();
+
+                        string displayName = displayAttribute != null ? displayAttribute.Name : game.ToString();
+
+                        <option value="@game">@displayName</option>
+                    }
+                </select>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary d-block w-100 mb-3">Alterar</button>
+            <a class="btn btn-danger d-block w-100 mb-3" role="button" asp-controller="Host" asp-action="Index">Cancelar</a>
+        </form>
+    </body>
+</html>

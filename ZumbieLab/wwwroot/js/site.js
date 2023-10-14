@@ -1,8 +1,5 @@
 ﻿$(document).ready(function () {
     getDataTable('#user-table')
-    getDataTable('#game-table')
-    getDataTable('#sport-table')
-    getDataTable('#musicalTaste-table')
 });
 
 function getDataTable(id) {

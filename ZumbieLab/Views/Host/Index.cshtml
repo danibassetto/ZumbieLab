@@ -1,90 +1,92 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        @model List<HostModel>
-        @{
-            ViewData["Title"] = "Listagem de Hospedeiros";
-        }
-    </head>
-    <body>
-        <div class="text-center">
-            <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-1">
-                <a class="btn btn-primary" role="button" asp-controller="Host" asp-action="Create">Adicionar novo usuário</a>
+<head>
+    @model List<HostModel>
+    @{
+        ViewData["Title"] = "Listagem de Hospedeiros";
+    }
+</head>
+<body>
+    <div class="text-center">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-1">
+            <a class="btn btn-primary" role="button" asp-controller="Host" asp-action="Create">Adicionar novo hospedeiro</a>
+        </div>
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <button type="button" class="btn btn-success btn-sm close-alert" arial-label="Close">X</button>
+                @TempData["SuccessMessage"]
             </div>
+        }
 
-            @if (TempData["SuccessMessage"] != null)
-            {
-                <div class="alert alert-success" role="alert">
-                    <button type="button" class="btn btn-success btn-sm close-alert" arial-label="Close">X</button>
-                    @TempData["SuccessMessage"]
-                </div>
-            }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+                @TempData["ErrorMessage"]
+            </div>
+        }
 
-            @if (TempData["ErrorMessage"] != null)
-            {
-                <div class="alert alert-danger" role="alert">
-                    <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
-                    @TempData["ErrorMessage"]
-                </div>
-            }
-
-            <br />
-            <h1 class="display-4">Listagem de Hospedeiros</h1>
+        <br />
+        <h1 class="display-4">Listagem de Hospedeiros</h1>
 
         <table class="table" id="host-table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Idade</th>
-                        <th scope="col">Sexo</th>
-                        <th scope="col">Peso</th>
-                        <th scope="col">Altura</th>
-                        <th scope="col">Tipo Sanguíneo</th>
-                        <th scope="col">Gosto Musical</th>
-                        <th scope="col">Esporte Praticado</th>
-                        <th scope="col">Jogo Preferido</th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @if (Model != null && Model.Any())
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Idade</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Peso</th>
+                    <th scope="col">Altura</th>
+                    <th scope="col">Tipo Sanguíneo</th>
+                    <th scope="col">Gosto Musical</th>
+                    <th scope="col">Esporte Praticado</th>
+                    <th scope="col">Jogo Preferido</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    @foreach (HostModel host in Model)
                     {
-                        @foreach (HostModel host in Model)
-                        {
-                            <tr>
-                                <th scope="row">@host.Id</th>
-                                <td>@host.Age</td>
-                                <td>@host.Gender</td>
-                                <td>@host.Weight</td>
-                                <td>@host.Height</td>
-                                <td>@host.BloodType</td>
-                                <td>@host.MusicalTaste</td>
-                                <td>@host.SportPlayed</td>
-                                <td>@host.FavoriteGame</td>
-                                <td>
-                                    <div class="btn-group" role="group">
+                        <tr>
+                            <th scope="row">@host.Id</th>
+                            <td>@host.Age</td>
+                            <td>@host.Gender</td>
+                            <td>@host.Weight</td>
+                            <td>@host.Height</td>
+                            <td>@host.BloodType</td>
+                            <td>@host.MusicalTaste</td>
+                            <td>@host.SportPlayed</td>
+                            <td>@host.FavoriteGame</td>
+                            <td>
+                                <div class="btn-group" role="group">
                                     <a role="button" class="btn btn-primary" asp-route-id="@host.Id" asp-controller="Host" asp-action="Update">Editar</a>
                                     <a role="button" class="btn btn-danger" asp-route-id="@host.Id" asp-controller="Host" asp-action="DeleteConfirmation">Excluir</a>
-                                    </div>
-                                </td>
-                            </tr>
-                        }
-                    }
-                    else
-                    {
-                        <tr class="odd">
-                            <th></th>
-                            <td></td>
-                            <td></td>
-                            <td>Nenhum hospedeiro cadastrado</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                                </div>
+                            </td>
                         </tr>
                     }
-                </tbody>
-            </table>
-        </div>
-    </body>
+                }
+                else
+                {
+                    <tr class="odd">
+                        <th></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Nenhum hospedeiro cadastrado</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
 </html>

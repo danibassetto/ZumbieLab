@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using ZombieLab.Enums;
 
 namespace ZombieLab.Models
@@ -7,20 +8,25 @@ namespace ZombieLab.Models
     {
         public long Id { get; set; }
         [Required(ErrorMessage = "Informe a idade")]
-        public int Age { get; set; }
+        [Range(1, int.MaxValue, ErrorMessage = "A idade deve ser maior que zero!")]
+        public int? Age { get; set; }
         [Required(ErrorMessage = "Informe o sexo")]
-        public EnumGender Gender { get; set; }
+        public EnumGender? Gender { get; set; }
         [Required(ErrorMessage = "Informe o peso")]
-        public decimal Weight { get; set; }
+        [Column(TypeName = "decimal(5,2)")]
+        [Range(1, int.MaxValue, ErrorMessage = "O peso deve ser maior que zero!")]
+        public decimal? Weight { get; set; }
         [Required(ErrorMessage = "Informe a altura")]
+        [Column(TypeName = "decimal(4,2)")]
+        [Range(1, int.MaxValue, ErrorMessage = "A altura deve ser maior que zero!")]
         public decimal Height { get; set; }
         [Required(ErrorMessage = "Informe o tipo sanguíneo")]
-        public EnumBloodType BloodType { get; set; }
+        public EnumBloodType? BloodType { get; set; }
         [Required(ErrorMessage = "Informe o gosto musical")]
-        public EnumMusicalTaste MusicalTaste { get; set; }
+        public EnumMusicalTaste? MusicalTaste { get; set; }
         [Required(ErrorMessage = "Informe o esporte praticado")]
-        public EnumSportPlayed SportPlayed { get; set; }
+        public EnumSportPlayed? SportPlayed { get; set; }
         [Required(ErrorMessage = "Informe o jogo preferido")]
-        public EnumFavoriteGame FavoriteGame { get; set; }
+        public EnumFavoriteGame? FavoriteGame { get; set; }
     }
 }

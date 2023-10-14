@@ -45,10 +45,17 @@
                 <label for="bloodType">Tipo Sanguíneo</label> @Html.ValidationMessageFor(x => x.BloodType)
                 <select asp-for="BloodType" class="form-control">
                     <option value="">Selecione</option>
-                    <option value="@EnumBloodType.A">A</option>
-                    <option value="@EnumBloodType.B">B</option>
-                    <option value="@EnumBloodType.O">O</option>
-                    <option value="@EnumBloodType.AB">AB</option>
+                    @foreach (var blood in Enum.GetValues(typeof(EnumBloodType)))
+                    {
+                        var displayAttribute = blood.GetType()
+                        .GetMember(blood.ToString())
+                        .First()
+                        .GetCustomAttribute<DisplayAttribute>();
+
+                        string displayName = displayAttribute != null ? displayAttribute.Name : blood.ToString();
+
+                        <option value="@blood">@displayName</option>
+                    }
                 </select>
             </div>
             <div class="col-md-3 me-2">

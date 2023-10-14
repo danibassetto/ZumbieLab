@@ -37,3 +37,9 @@ body {
     justify-content: space-between;
     height: 100%;
 }
+
+.login {
+    background-image: url("../image/login.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}

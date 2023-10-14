@@ -1,6 +1,6 @@
-﻿using ZumbieLab.Models;
+﻿using ZombieLab.Models;
 
-namespace ZumbieLab.Helpers
+namespace ZombieLab.Helpers
 {
     public interface ISession
     {

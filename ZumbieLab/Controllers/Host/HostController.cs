@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ZumbieLab.Models;
-using ZumbieLab.Repositories;
+using ZombieLab.Models;
+using ZombieLab.Repositories;
 
-namespace ZumbieLab.Controllers
+namespace ZombieLab.Controllers
 {
     public class HostController : Controller
     {

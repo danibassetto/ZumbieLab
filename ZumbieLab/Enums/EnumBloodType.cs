@@ -1,4 +1,4 @@
-﻿namespace ZumbieLab.Enums
+﻿namespace ZombieLab.Enums
 {
     public enum EnumBloodType
     {

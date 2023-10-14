@@ -1,9 +1,9 @@
-﻿using ZumbieLab.Helpers;
-using ZumbieLab.Models;
-using ZumbieLab.Repositories;
+﻿using ZombieLab.Helpers;
+using ZombieLab.Models;
+using ZombieLab.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ZumbieLab.Controllers
+namespace ZombieLab.Controllers
 {
     public class LoginController : Controller
     {

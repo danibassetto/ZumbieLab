@@ -1,8 +1,8 @@
-﻿using ZumbieLab.Data;
-using ZumbieLab.Models;
+﻿using ZombieLab.Data;
+using ZombieLab.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ZumbieLab.Repositories
+namespace ZombieLab.Repositories
 {
     public class UserRepository : IUserRepository
     {

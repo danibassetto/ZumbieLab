@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace ZumbieLab.Controllers.Restrict
+namespace ZombieLab.Controllers.Restrict
 {
     public class RestrictController : Controller
     {

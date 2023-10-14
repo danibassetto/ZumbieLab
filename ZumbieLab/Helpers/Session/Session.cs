@@ -1,7 +1,7 @@
-﻿using ZumbieLab.Models;
+﻿using ZombieLab.Models;
 using Newtonsoft.Json;
 
-namespace ZumbieLab.Helpers
+namespace ZombieLab.Helpers
 {
     public class Session : ISession
     {

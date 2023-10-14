@@ -1,7 +1,7 @@
-﻿using ZumbieLab.Helpers;
+﻿using ZombieLab.Helpers;
 using System.ComponentModel.DataAnnotations;
 
-namespace ZumbieLab.Models
+namespace ZombieLab.Models
 {
     public class UserModel
     {

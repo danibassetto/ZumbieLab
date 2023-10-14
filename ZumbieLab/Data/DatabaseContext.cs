@@ -1,8 +1,8 @@
-﻿using ZumbieLab.Map;
-using ZumbieLab.Models;
+﻿using ZombieLab.Map;
+using ZombieLab.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ZumbieLab.Data
+namespace ZombieLab.Data
 {
     public class DataBaseContext : DbContext
     {

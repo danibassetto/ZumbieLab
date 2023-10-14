@@ -1,6 +1,6 @@
-using ZumbieLab.Data;
-using ZumbieLab.Helpers;
-using ZumbieLab.Repositories;
+using ZombieLab.Data;
+using ZombieLab.Helpers;
+using ZombieLab.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,7 +19,7 @@ builder.Services.AddDbContext<DataBaseContext>(opts =>
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 #region Configure Interface and Repository
-builder.Services.AddScoped<ZumbieLab.Helpers.ISession, Session>();
+builder.Services.AddScoped<ZombieLab.Helpers.ISession, Session>();
 builder.Services.AddScoped<IEmail, Email>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IHostRepository, HostRepository>();
@@ -42,7 +42,7 @@ if (!dbContext.Database.CanConnect())
     // Create the database if it doesn't exist
     dbContext.Database.EnsureCreated();
     // Read the SQL script file
-    var scriptFilePath = Path.Combine(AppContext.BaseDirectory, "Scripts", "ZumbieLab.sql");
+    var scriptFilePath = Path.Combine(AppContext.BaseDirectory, "Scripts", "ZombieLab.sql");
     var script = File.ReadAllText(scriptFilePath);
 
     // Execute the script to create the database

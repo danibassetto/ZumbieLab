@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using ZumbieLab.Enums;
+using ZombieLab.Enums;
 
-namespace ZumbieLab.Models
+namespace ZombieLab.Models
 {
     public class HostModel
     {

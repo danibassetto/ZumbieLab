@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ZumbieLab.Models
+namespace ZombieLab.Models
 {
     public class RedefinePasswordModel
     {

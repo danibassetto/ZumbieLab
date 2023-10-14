@@ -1,6 +1,6 @@
-﻿using ZumbieLab.Models;
+﻿using ZombieLab.Models;
 
-namespace ZumbieLab.Repositories
+namespace ZombieLab.Repositories
 {
     public interface IHostRepository
     {

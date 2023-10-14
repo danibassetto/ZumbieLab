@@ -1,8 +1,8 @@
-﻿using ZumbieLab.Models;
+﻿using ZombieLab.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-namespace ZumbieLab.ViewComponents
+namespace ZombieLab.ViewComponents
 {
     public class Menu : ViewComponent
     {

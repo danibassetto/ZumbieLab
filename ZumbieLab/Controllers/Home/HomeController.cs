@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using ZumbieLab.Models;
+using ZombieLab.Models;
 
-namespace ZumbieLab.Controllers
+namespace ZombieLab.Controllers
 {
     public class HomeController : Controller
     {

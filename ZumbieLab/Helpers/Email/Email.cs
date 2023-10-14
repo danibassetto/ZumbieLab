@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Net.Mail;
 
-namespace ZumbieLab.Helpers
+namespace ZombieLab.Helpers
 {
     public class Email : IEmail
     {

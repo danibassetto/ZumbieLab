@@ -1,8 +1,8 @@
-﻿using ZumbieLab.Models;
+﻿using ZombieLab.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ZumbieLab.Map
+namespace ZombieLab.Map
 {
     public class UserMap : IEntityTypeConfiguration<UserModel>
     {

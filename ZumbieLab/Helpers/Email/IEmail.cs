@@ -1,4 +1,4 @@
-﻿namespace ZumbieLab.Helpers
+﻿namespace ZombieLab.Helpers
 {
     public interface IEmail
     {

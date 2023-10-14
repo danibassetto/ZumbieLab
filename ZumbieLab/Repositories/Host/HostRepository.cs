@@ -1,7 +1,7 @@
-﻿using ZumbieLab.Data;
-using ZumbieLab.Models;
+﻿using ZombieLab.Data;
+using ZombieLab.Models;
 
-namespace ZumbieLab.Repositories
+namespace ZombieLab.Repositories
 {
     public class HostRepository : IHostRepository
     {

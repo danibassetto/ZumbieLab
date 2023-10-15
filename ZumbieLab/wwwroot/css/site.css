@@ -49,3 +49,16 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.classification{
+    text-align: justify;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.classification h1{
+    text-align: center;
+}
+
+.classification table{
+    width: 40%;
+}

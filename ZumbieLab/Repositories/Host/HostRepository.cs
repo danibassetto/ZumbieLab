@@ -51,7 +51,7 @@ namespace ZombieLab.Repositories
             updateHost.MusicalTaste = host.MusicalTaste;
             updateHost.SportPlayed = host.SportPlayed;
             updateHost.FavoriteGame = host.FavoriteGame;
-            host.SetAttributes();
+            updateHost.SetAttributes();
             _dataBaseContext.Update(updateHost);
             _dataBaseContext.SaveChanges();
             return updateHost;

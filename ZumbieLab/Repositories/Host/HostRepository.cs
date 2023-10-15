@@ -12,11 +12,12 @@ namespace ZombieLab.Repositories
             _dataBaseContext = dataBaseContext;
         }
 
-        public HostModel Create(HostModel Host)
+        public HostModel Create(HostModel host)
         {
-            _dataBaseContext.Host.Add(Host);
+            host.SetAttributes();
+            _dataBaseContext.Host.Add(host);
             _dataBaseContext.SaveChanges();
-            return Host;
+            return host;
         }
 
         public bool Delete(long id)
@@ -50,7 +51,7 @@ namespace ZombieLab.Repositories
             updateHost.MusicalTaste = host.MusicalTaste;
             updateHost.SportPlayed = host.SportPlayed;
             updateHost.FavoriteGame = host.FavoriteGame;
-
+            host.SetAttributes();
             _dataBaseContext.Update(updateHost);
             _dataBaseContext.SaveChanges();
             return updateHost;

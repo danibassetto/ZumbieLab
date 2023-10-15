@@ -13,7 +13,8 @@
                 $('#modalShowAttributes').modal('show');
                 $('#show-attributes-table').DataTable({
                     "paging": false,
-                    "searching": false
+                    "searching": false,
+                    "ordering": false,
                 });
             }
         });

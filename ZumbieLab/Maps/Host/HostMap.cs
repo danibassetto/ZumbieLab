@@ -47,6 +47,18 @@ namespace ZombieLab.Map
             builder.Property(x => x.FavoriteGame).HasColumnName("jogo_preferido");
             builder.Property(x => x.FavoriteGame).IsRequired();
             builder.Property(x => x.FavoriteGame).ValueGeneratedNever();
+
+            builder.Property(x => x.Force).HasColumnName("forca");
+            builder.Property(x => x.Force).IsRequired();
+            builder.Property(x => x.Force).ValueGeneratedNever();
+
+            builder.Property(x => x.Intelligence).HasColumnName("inteligencia");
+            builder.Property(x => x.Intelligence).IsRequired();
+            builder.Property(x => x.Intelligence).ValueGeneratedNever();
+
+            builder.Property(x => x.Velocity).HasColumnName("velocidade");
+            builder.Property(x => x.Velocity).IsRequired();
+            builder.Property(x => x.Velocity).ValueGeneratedNever();
         }
     }
 }

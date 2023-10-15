@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.ComponentModel.DataAnnotations;
+<!DOCTYPE html>
 <html>
 <head>
     @model List<HostModel>
@@ -52,15 +53,15 @@
                     @foreach (HostModel host in Model)
                     {
                         <tr>
-                            <th scope="row">@host.Id</th>
+                            <th>@(Model.IndexOf(host) + 1)</th>
                             <td>@host.Age</td>
-                            <td>@host.Gender</td>
+                            <td>@host.Gender</td> 
                             <td>@host.Weight</td>
                             <td>@host.Height</td>
-                            <td>@host.BloodType</td>
-                            <td>@host.MusicalTaste</td>
-                            <td>@host.SportPlayed</td>
-                            <td>@host.FavoriteGame</td>
+                            <td>@(((DisplayAttribute)host.BloodType.GetType().GetMember(host.BloodType.ToString())[0].GetCustomAttributes(typeof(DisplayAttribute), false).FirstOrDefault()).Name)</td>
+                            <td>@(((DisplayAttribute)host.MusicalTaste.GetType().GetMember(host.MusicalTaste.ToString())[0].GetCustomAttributes(typeof(DisplayAttribute), false).FirstOrDefault()).Name)</td>
+                            <td>@(((DisplayAttribute)host.SportPlayed.GetType().GetMember(host.SportPlayed.ToString())[0].GetCustomAttributes(typeof(DisplayAttribute), false).FirstOrDefault()).Name)</td>
+                            <td>@(((DisplayAttribute)host.FavoriteGame.GetType().GetMember(host.FavoriteGame.ToString())[0].GetCustomAttributes(typeof(DisplayAttribute), false).FirstOrDefault()).Name)</td>
                             <td>
                                 <div class="btn-group" role="group">
                                     <a role="button" class="btn btn-primary" asp-route-id="@host.Id" asp-controller="Host" asp-action="Update">Editar</a>

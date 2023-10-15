@@ -1,35 +1,42 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        @model UserModel
-        @{
-            ViewData["Title"] = "Editar usuário";
-        }
-    </head>
-    <body>
-        <div class="text-center">
-            <h1 class="display-4">Editar Usuário</h1>
-        </div>
+<head>
+    @model UserModel
+    @{
+        ViewData["Title"] = "Editar usuário";
+    }
+</head>
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Editar Usuário</h1>
+    </div>
 
-        <form asp-controller="User" asp-action="Update" method="post">
+    <form asp-controller="User" asp-action="Update" method="post">
 
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group mb-3">
+        <input type="hidden" asp-for="Id" />
+        <div class="form-row d-flex">
+            <div class="col-md-6 me-2">
                 <label for="name">Nome</label> @Html.ValidationMessageFor(x => x.Name)
                 <input type="text" asp-for="Name" class="form-control" placeholder="Informe o nome">
             </div>
-            <div class="form-group mb-3">
-                <label for="login">Login</label> @Html.ValidationMessageFor(x => x.Login)
-                <input type="text" asp-for="Login" class="form-control" placeholder="Informe o login">
-            </div>
-            <div class="form-group mb-3">
+            <div class="col-md-6 me-2">
                 <label for="email">E-mail</label> @Html.ValidationMessageFor(x => x.Email)
                 <input type="email" asp-for="Email" class="form-control" placeholder="Informe o e-mail">
             </div>
+        </div>
+        <br />
+        <div class="form-row d-flex">
+            <div class="col-md-6 me-2">
+                <label for="login">Login</label> @Html.ValidationMessageFor(x => x.Login)
+                <input type="text" asp-for="Login" class="form-control" placeholder="Informe o login">
+            </div>
+        </div>
+        <br />
 
-
-            <button type="submit" class="btn btn-primary d-block w-100 mb-3">Alterar</button>
-            <a class="btn btn-danger d-block w-100 mb-3" role="button" asp-controller="User" asp-action="Index">Cancelar</a>
-        </form>
-    </body>
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary me-1">Alterar</button>
+            <a class="btn btn-danger" role="button" asp-controller="User" asp-action="Index">Cancelar</a>
+        </div>
+    </form>
+</body>
 </html>

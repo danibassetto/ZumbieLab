@@ -43,3 +43,9 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.home {
+    background-image: url("../image/home.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}

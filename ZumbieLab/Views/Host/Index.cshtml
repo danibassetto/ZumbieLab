@@ -27,7 +27,7 @@
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-1">
             <a class="btn btn-success" role="button" asp-controller="Host" asp-action="Create">Adicionar</a>
-        </div>        
+        </div>
 
         <h1 class="display-4">Listagem de Hospedeiros</h1>
 
@@ -54,7 +54,7 @@
                         <tr>
                             <th>@(Model.IndexOf(host) + 1)</th>
                             <td>@host.Age</td>
-                            <td>@host.Gender</td> 
+                            <td>@host.Gender</td>
                             <td>@host.Weight</td>
                             <td>@host.Height</td>
                             <td>@(((DisplayAttribute)host.BloodType.GetType().GetMember(host.BloodType.ToString())[0].GetCustomAttributes(typeof(DisplayAttribute), false).FirstOrDefault()).Name)</td>
@@ -63,8 +63,15 @@
                             <td>@(((DisplayAttribute)host.FavoriteGame.GetType().GetMember(host.FavoriteGame.ToString())[0].GetCustomAttributes(typeof(DisplayAttribute), false).FirstOrDefault()).Name)</td>
                             <td>
                                 <div class="btn-group" role="group">
-                                    <a role="button" class="btn btn-primary" asp-route-id="@host.Id" asp-controller="Host" asp-action="Update">Editar</a>
-                                    <a role="button" class="btn btn-danger" asp-route-id="@host.Id" asp-controller="Host" asp-action="DeleteConfirmation">Excluir</a>
+                                    <a role="button" class="btn btn-primary" asp-route-id="@host.Id" asp-controller="Host" asp-action="Update" title="Editar">
+                                        <i class="bi bi-pencil-square fs-6"></i>
+                                    </a>
+                                    <a href="javascript:" user-id="@host.Id" class="btn btn-warning btn-sm btn-show-attributes" title="Atributos">
+                                        <i class="bi bi-bar-chart-fill text-white fs-6"></i>
+                                    </a>
+                                    <a role="button" class="btn btn-danger" asp-route-id="@host.Id" asp-controller="Host" asp-action="DeleteConfirmation" title="Excluir">
+                                        <i class="bi bi-trash fs-6"></i>
+                                    </a>
                                 </div>
                             </td>
                         </tr>
@@ -87,6 +94,22 @@
                 }
             </tbody>
         </table>
+
+        <div id="modalShowAttributes" class="modal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Atributos</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="hostShowAttributes"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

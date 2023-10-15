@@ -1,6 +1,23 @@
 ﻿$(document).ready(function () {
     getDataTable('#user-table')
     getDataTable('#host-table')
+
+    $('.btn-show-attributes').click(function () {
+        var userId = $(this).attr('user-id');
+
+        $.ajax({
+            type: 'GET',
+            url: '/Host/ShowAttributes/' + userId,
+            success: function (result) {
+                $("#hostShowAttributes").html(result);
+                $('#modalShowAttributes').modal('show');
+                $('#show-attributes-table').DataTable({
+                    "paging": false,
+                    "searching": false
+                });
+            }
+        });
+    });
 });
 
 function getDataTable(id) {

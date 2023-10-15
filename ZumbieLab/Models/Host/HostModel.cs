@@ -28,5 +28,11 @@ namespace ZombieLab.Models
         public EnumSportPlayed? SportPlayed { get; set; }
         [Required(ErrorMessage = "Informe o jogo preferido")]
         public EnumFavoriteGame? FavoriteGame { get; set; }
+        [NotMapped]
+        public int? Force { get; set; }
+        [NotMapped]
+        public int? Intelligence { get; set; }
+        [NotMapped]
+        public int? Velocity { get; set; }
     }
 }

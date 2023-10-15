@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @model HostModel
+</head>
+<body>
+    <table class="table" id="show-attributes-table">
+        <thead>
+            <tr>
+                <th scope="col">Força</th>
+                <th scope="col">Inteligência</th>
+                <th scope="col">Velocidade</th>-
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                <tr>
+                    <td>@Model.Force</td>
+                    <td>@Model.Intelligence</td>
+                    <td>@Model.Velocity</td>
+                </tr>
+            }
+            else
+            {
+                <tr class="odd">
+                    <th></th>
+                    <td></td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

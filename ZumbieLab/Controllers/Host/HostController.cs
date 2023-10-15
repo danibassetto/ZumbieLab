@@ -24,19 +24,19 @@ namespace ZombieLab.Controllers
             return View();
         }
 
-        public IActionResult Update(int id)
+        public IActionResult Update(long id)
         {
             HostModel contato = _hostRepository.Get(id);
             return View(contato);
         }
 
-        public IActionResult DeleteConfirmation(int id)
+        public IActionResult DeleteConfirmation(long id)
         {
             HostModel contato = _hostRepository.Get(id);
             return View(contato);
         }
 
-        public IActionResult Delete(int id)
+        public IActionResult Delete(long id)
         {
 
             try
@@ -102,6 +102,13 @@ namespace ZombieLab.Controllers
                 TempData["ErrorMessage"] = $"Erro: {ex.Message}";
                 return RedirectToAction("Index");
             }
+        }
+
+        [HttpGet]
+        public IActionResult ShowAttributes(long id)
+        {
+            HostModel host = _hostRepository.Get(id);
+            return PartialView("_ShowAttributes", host);
         }
     }
 }

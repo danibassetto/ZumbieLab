@@ -6,18 +6,18 @@
 <body>
     <div style="background-color: #19332A; width: 250px;" class="offcanvas offcanvas-start" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
         <div class="offcanvas-header">
-            <h4 class="offcanvas-title text-white d-none d-sm-block" id="offcanvas">Zombie Lab</h4>
+            <h4 class="offcanvas-title d-none d-sm-block" style="color: #2BFDBE; font-weight: 800;" id="offcanvas"> Zombie Lab</h4>
             <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <nav class="offcanvas-body px-0">
             <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
                 <li class="nav-item">
-                    <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link text-truncate" style="color: white;">
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link text-truncate" style="color: white; font-size: 20px;">
                         <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Home</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a asp-area="" asp-controller="Host" asp-action="Index" class="nav-link text-truncate" style="color: white;">
+                    <a asp-area="" asp-controller="Host" asp-action="Index" class="nav-link text-truncate" style="color: white; font-size: 20px;">
                         <i class="fs-5 bi-person-vcard"></i><span class="ms-1 d-none d-sm-inline">Hospedeiro</span>
                     </a>
                 </li>
@@ -25,7 +25,7 @@
             <hr style="color: wheat;">
             <div class="dropdown pb-4">
                 <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span class="d-none d-sm-inline mx-3">Olá, @Model.Name!</span>
+                    <span class="d-none d-sm-inline mx-3">Olá, @Model.Name! </span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark text-small shadow dropdown-menu-md-end">
                     <li>

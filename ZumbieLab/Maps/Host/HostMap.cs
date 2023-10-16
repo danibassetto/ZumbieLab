@@ -59,6 +59,10 @@ namespace ZombieLab.Map
             builder.Property(x => x.Velocity).HasColumnName("velocidade");
             builder.Property(x => x.Velocity).IsRequired();
             builder.Property(x => x.Velocity).ValueGeneratedNever();
+
+            builder.Property(x => x.DangerScore).HasColumnName("score_perigo");
+            builder.Property(x => x.DangerScore).IsRequired();
+            builder.Property(x => x.DangerScore).ValueGeneratedNever();
         }
     }
 }

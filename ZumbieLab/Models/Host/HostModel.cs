@@ -30,9 +30,14 @@ namespace ZombieLab.Models
         public EnumSportPlayed? SportPlayed { get; set; }
         [Required(ErrorMessage = "Informe o jogo preferido")]
         public EnumFavoriteGame? FavoriteGame { get; set; }
-        public int? Force { get; set; }
-        public int? Intelligence { get; set; }
-        public int? Velocity { get; set; }
+        [Column(TypeName = "decimal(4,2)")]
+        public decimal? Force { get; set; }
+        [Column(TypeName = "decimal(4,2)")]
+        public decimal? Intelligence { get; set; }
+        [Column(TypeName = "decimal(4,2)")]
+        public decimal? Velocity { get; set; }
+        [Column(TypeName = "decimal(4,2)")]
+        public decimal? DangerScore { get; set; }
 
         public void SetAttributes()
         {
@@ -302,6 +307,8 @@ namespace ZombieLab.Models
             Force = Force / 6;
             Intelligence = Intelligence / 6;
             Velocity = Velocity / 6;
+
+            DangerScore = (Force + Intelligence + Velocity) / 3;
         }
     }
 }

@@ -110,5 +110,12 @@ namespace ZombieLab.Controllers
             HostModel host = _hostRepository.Get(id);
             return PartialView("_ShowAttributes", host);
         }
+
+        [HttpGet]
+        public IActionResult DuckChip(long id)
+        {
+            HostModel host = _hostRepository.Get(id);
+            return PartialView("_DuckChip", host);
+        }
     }
 }

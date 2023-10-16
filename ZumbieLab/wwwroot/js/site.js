@@ -11,11 +11,18 @@
             success: function (result) {
                 $("#hostShowAttributes").html(result);
                 $('#modalShowAttributes').modal('show');
-                $('#show-attributes-table').DataTable({
-                    "paging": false,
-                    "searching": false,
-                    "ordering": false,
-                });
+            }
+        });
+    });
+    $('.btn-duck-chip').click(function () {
+        var userId = $(this).attr('user-id');
+
+        $.ajax({
+            type: 'GET',
+            url: '/Host/DuckChip/' + userId,
+            success: function (result) {
+                $("#hostDuckChip").html(result);
+                $('#modalDuckChip').modal('show');
             }
         });
     });

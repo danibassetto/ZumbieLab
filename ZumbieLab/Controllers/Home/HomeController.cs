@@ -13,7 +13,7 @@ namespace ZombieLab.Controllers
             return View();
         }
 
-        public IActionResult TableClassification() 
+        public IActionResult Info() 
         {
             return View();
         }

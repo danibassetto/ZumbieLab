@@ -11,7 +11,7 @@
         <h1>Sobre: Classificação</h1>
         <hr />
         <p>
-            Depois de muita análise clínica, nossos cientistas chegaram a conclusão de que é possível classificar a força, inteligência e velocidade de um possível hospedeiro com base em 
+            Depois de muita análise clínica, nossos cientistas chegaram a conclusão de que é possível classificar a força, inteligência e velocidade de um possível hospedeiro com base em
             características como:
             <ul>
                 <li>Idade</li>
@@ -24,27 +24,373 @@
                 <li>Esporte Praticado</li>
             </ul>
 
-            
-            O cálculo da força total é influenciado pelo tipo sanguíneo, idade, sexo, peso, altura e esporte praticado.
+            Cada um dos atributos (força, inteligência e velocidade) possui valores de 1 a 100 nos dados catalogados.
             <br />
-            O cálculo da inteligência é influenciado pelo tipo sanguíneo, idade, sexo, gosto musical, jogo preferido e esporte praticado.
             <br />
-            O cálculo da velocidade é influenciado pelo tipo sanguíneo, idade, sexo, peso, altura e esporte praticado.
+            O cálculo da força total é influenciado pelo tipo sanguíneo, idade, sexo, peso, altura e esporte praticado. Portanto, após a soma de todos os pontos de força, a mesma é dividida por 6.
             <br />
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Tipo Sanguíneo</th>
-                        <th scope="col">Força</th>
-                        <th scope="col">Inteligência</th>
-                        <th scope="col">Velocidade</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <td></td>
-                </tbody>
-            </table>
-        </p>
+            <br />
+            O cálculo da inteligência é influenciado pelo tipo sanguíneo, idade, sexo, gosto musical, jogo preferido e esporte praticado. Portanto, após a soma de todos os pontos de inteligência, a mesma é dividida por 6.
+            <br />
+            <br />
+            O cálculo da velocidade é influenciado pelo tipo sanguíneo, idade, sexo, peso, altura e esporte praticado. Portanto, após a soma de todos os pontos de velocidade, a mesma é dividida por 6.
+            <br /><br />
+
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Tipo Sanguíneo</th>
+                            <th scope="col">Força</th>
+                            <th scope="col">Inteligência</th>
+                            <th scope="col">Velocidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A+</td>
+                            <td>70pts</td>
+                            <td>50pts</td>
+                            <td>80pts</td>
+                        </tr>
+                        <tr>
+                            <td>A-</td>
+                            <td>60pts</td>
+                            <td>40pts</td>
+                            <td>70pts</td>
+                        </tr>
+                        <tr>
+                            <td>B+</td>
+                            <td>80pts</td>
+                            <td>60pts</td>
+                            <td>85pts</td>
+                        </tr>
+                        <tr>
+                            <td>B-</td>
+                            <td>70pts</td>
+                            <td>50pts</td>
+                            <td>75pts</td>
+                        </tr>
+                        <tr>
+                            <td>O+</td>
+                            <td>40pts</td>
+                            <td>55pts</td>
+                            <td>60pts</td>
+                        </tr>
+                        <tr>
+                            <td>O-</td>
+                            <td>30pts</td>
+                            <td>45pts</td>
+                            <td>65pts</td>
+                        </tr>
+                        <tr>
+                            <td>AB+</td>
+                            <td>100pts</td>
+                            <td>100pts</td>
+                            <td>100pts</td>
+                        </tr>
+                        <tr>
+                            <td>AB-</td>
+                            <td>90pts</td>
+                            <td>90pts</td>
+                            <td>90pts</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Idade</th>
+                            <th scope="col">Força</th>
+                            <th scope="col">Inteligência</th>
+                            <th scope="col">Velocidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0 a 5</td>
+                            <td>20pts</td>
+                            <td>35pts</td>
+                            <td>40pts</td>
+                        </tr>
+                        <tr>
+                            <td>6 a 11</td>
+                            <td>60pts</td>
+                            <td>50pts</td>
+                            <td>70pts</td>
+                        </tr>
+                        <tr>
+                            <td>12 a 17</td>
+                            <td>90pts</td>
+                            <td>80pts</td>
+                            <td>95pts</td>
+                        </tr>
+                        <tr>
+                            <td>18 a 29</td>
+                            <td>100pts</td>
+                            <td>100pts</td>
+                            <td>100pts</td>
+                        </tr>
+                        <tr>
+                            <td>30 a 59</td>
+                            <td>90pts</td>
+                            <td>90pts</td>
+                            <td>80pts</td>
+                        </tr>
+                        <tr>
+                            <td>60+</td>
+                            <td>70pts</td>
+                            <td>75pts</td>
+                            <td>60pts</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Peso</th>
+                            <th scope="col">Força</th>
+                            <th scope="col">Velocidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0 a 30kg</td>
+                            <td>40pts</td>
+                            <td>100pts</td>
+                        </tr>
+                        <tr>
+                            <td>31 a 70kg</td>
+                            <td>70pts</td>
+                            <td>80pts</td>
+                        </tr>
+                        <tr>
+                            <td>70+</td>
+                            <td>100pts</td>
+                            <td>60pts</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Altura</th>
+                            <th scope="col">Força</th>
+                            <th scope="col">Velocidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0 a 1m</td>
+                            <td>60pts</td>
+                            <td>50pts</td>
+                        </tr>
+                        <tr>
+                            <td>Maior que 1 a 1.5m</td>
+                            <td>70pts</td>
+                            <td>60pts</td>
+                        </tr>
+                        <tr>
+                            <td>Maior que 1.5 a 2m</td>
+                            <td>90pts</td>
+                            <td>80pts</td>
+                        </tr>
+                        <tr>
+                            <td>2m+</td>
+                            <td>100pts</td>
+                            <td>100pts</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Sexo</th>
+                            <th scope="col">Força</th>
+                            <th scope="col">Inteligência</th>
+                            <th scope="col">Velocidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>F</td>
+                            <td>90pts</td>
+                            <td>100pts</td>
+                            <td>85pts</td>
+                        </tr>
+                        <tr>
+                            <td>M</td>
+                            <td>100pts</td>
+                            <td>70pts</td>
+                            <td>100pts</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Gosto Musical</th>
+                            <th scope="col">Inteligência</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pop</td>
+                            <td>100pts</td>
+                        </tr>
+                        <tr>
+                            <td>Rock</td>
+                            <td>70pts</td>
+                        </tr>
+                        <tr>
+                            <td>Pagode</td>
+                            <td>40pts</td>
+                        </tr>
+                        <tr>
+                            <td>Sertanejo</td>
+                            <td>60pts</td>
+                        </tr>
+                        <tr>
+                            <td>Hip-Hop/Rap</td>
+                            <td>70pts</td>
+                        </tr>
+                        <tr>
+                            <td>Eletrônica</td>
+                            <td>90pts</td>
+                        </tr>
+                        <tr>
+                            <td>Funk</td>
+                            <td>30pts</td>
+                        </tr>
+                        <tr>
+                            <td>Demais gêneros</td>
+                            <td>10pts</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Jogo Preferido</th>
+                            <th scope="col">Inteligência</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Counter-Strike</td>
+                            <td>90pts</td>
+                        </tr>
+                        <tr>
+                            <td>Minecraft</td>
+                            <td>100pts</td>
+                        </tr>
+                        <tr>
+                            <td>Fortnite</td>
+                            <td>70pts</td>
+                        </tr>
+                        <tr>
+                            <td>The Witcher</td>
+                            <td>100pts</td>
+                        </tr>
+                        <tr>
+                            <td>Valorant</td>
+                            <td>60pts</td>
+                        </tr>
+                        <tr>
+                            <td>Assassin's Creed</td>
+                            <td>90pts</td>
+                        </tr>
+                        <tr>
+                            <td>World of Warcraft</td>
+                            <td>80pts</td>
+                        </tr>
+                        <tr>
+                            <td>FIFA</td>
+                            <td>50pts</td>
+                        </tr>
+                        <tr>
+                            <td>League of Legends</td>
+                            <td>40pts</td>
+                        </tr>
+                        <tr>
+                            <td>Dota</td>
+                            <td>60pts</td>
+                        </tr>
+                        <tr>
+                            <td>Rocket League</td>
+                            <td>30pts</td>
+                        </tr>
+                        <tr>
+                            <td>Outros</td>
+                            <td>10pts</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Esporte</th>
+                            <th scope="col">Força</th>
+                            <th scope="col">Inteligência</th>
+                            <th scope="col">Velocidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Futebol</td>
+                            <td>90pts</td>
+                            <td>60pts</td>
+                            <td>100pts</td>
+                        </tr>
+                        <tr>
+                            <td>Basquete</td>
+                            <td>90pts</td>
+                            <td>80pts</td>
+                            <td>100pts</td>
+                        </tr>
+                        <tr>
+                            <td>Vôlei</td>
+                            <td>80pts</td>
+                            <td>90pts</td>
+                            <td>70pts</td>
+                        </tr>
+                        <tr>
+                            <td>Luta</td>
+                            <td>100pts</td>
+                            <td>70pts</td>
+                            <td>50pts</td>
+                        </tr>
+                        <tr>
+                            <td>Atletismo</td>
+                            <td>90pts</td>
+                            <td>80pts</td>
+                            <td>90pts</td>
+                        </tr>
+                        <tr>
+                            <td>eSport</td>
+                            <td>30pts</td>
+                            <td>100pts</td>
+                            <td>40pts</td>
+                        </tr>
+                        <tr>
+                            <td>Nada</td>
+                            <td>0pts</td>
+                            <td>0pts</td>
+                            <td>0pts</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        <p />
     </div>
 </body>
 </html>

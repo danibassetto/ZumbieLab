@@ -59,6 +59,15 @@ body {
     text-align: center;
 }
 
-.classification table{
-    width: 40%;
+.table-container {
+    display: flex;
+}
+
+.table-container table {
+    flex: 1;
+    margin-right: 50px;
+}
+
+.table-container table thead {
+    background-color: #90EE90;
 }

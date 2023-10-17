@@ -11,8 +11,18 @@
     <h6>Força: @Model.Force  Inteligência: @Model.Intelligence  Velocidade: @Model.Velocity</h6>
 
     <canvas id="barChart" width="200" height="100"></canvas>
-
-    <h3>Defesa:</h3>
+    <br />
+    
+    @if(Model.Force > 50)
+    {
+        <section class="carta-ataque">
+            <img src="~/image/camuflagem.jpeg"/>
+            <img src="~/image/jato-agua.jpeg"/>
+            <img src="~/image/escudo.jpeg"/>
+            <img src="~/image/investida-grupo.jpeg"/>
+            <img src="~/image/voo-evasivo.jpeg"/>
+        </section>
+    }    
 
     <script>
         var forceValue = parseFloat("@Model.Force") || 0;

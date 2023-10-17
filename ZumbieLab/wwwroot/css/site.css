@@ -72,3 +72,13 @@ body {
 .table-container table thead {
     background-color: #90EE90;
 }
+
+.carta-ataque{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.carta-ataque img{
+    width: 30%;
+}

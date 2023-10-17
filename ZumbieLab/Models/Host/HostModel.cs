@@ -264,7 +264,7 @@ namespace ZombieLab.Models
             #endregion
 
             #region SportPlayed
-            switch(SportPlayed)
+            switch (SportPlayed)
             {
                 case EnumSportPlayed.Soccer:
                     Force += 90;

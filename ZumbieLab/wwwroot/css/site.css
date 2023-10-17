@@ -73,12 +73,14 @@ body {
     background-color: #90EE90;
 }
 
-.carta-ataque{
+.ataque-defesa {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    justify-content: center;
+    gap: 1rem;
 }
 
-.carta-ataque img{
+.ataque-defesa img {
     width: 30%;
 }

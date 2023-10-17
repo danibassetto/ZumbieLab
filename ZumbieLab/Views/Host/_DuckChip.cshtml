@@ -12,17 +12,52 @@
 
     <canvas id="barChart" width="200" height="100"></canvas>
     <br />
+
+    <h3>Defesa: </h3>
+    <br />
+
+    <section class="ataque-defesa">
+        @if (Model.Force <= 50 && Model.Intelligence <= 60 && Model.Velocity <= 60)
+        {
+            <img src="~/image/modo-flash.jpeg" alt="Modo Flash">
+        }
+        @if (Model.Force > 50)
+        {
+            <img src="~/image/escudo.jpeg" alt="Escudo Anti-Força">
+        }
+        @if (Model.Intelligence > 60)
+        {
+            <img src="~/image/camuflagem.jpeg" alt="Camuflagem Inteligente">
+        }
+        @if (Model.Velocity > 60)
+        {
+            <img src="~/image/voo-evasivo.jpeg" alt="Voo Evasivo">
+        }
+    </section>
+
+    <br />
+    <h3>Ataque: </h3>
+    <br />
+    <section class="ataque-defesa">
+        @if (Model.Force <= 50 && Model.Intelligence <= 60 && Model.Velocity <= 60)
+        {
+            <img src="~/image/investida-simples.jpeg" alt="Investida Simples">
+        }
+        @if (Model.Force > 50)
+        {
+            <img src="~/image/investida-grupo.jpeg" alt="Investida em Grupo">
+        }
+        @if (Model.Intelligence > 60)
+        {
+            <img src="~/image/armadilha-surpresa.jpeg" alt="Armadilha Surpresa">
+        }
+        @if (Model.Velocity > 60)
+        {
+            <img src="~/image/jato-agua.jpeg" alt="Jato d'Água'">
+        }
+    </section>
+
     
-    @if(Model.Force > 50)
-    {
-        <section class="carta-ataque">
-            <img src="~/image/camuflagem.jpeg"/>
-            <img src="~/image/jato-agua.jpeg"/>
-            <img src="~/image/escudo.jpeg"/>
-            <img src="~/image/investida-grupo.jpeg"/>
-            <img src="~/image/voo-evasivo.jpeg"/>
-        </section>
-    }    
 
     <script>
         var forceValue = parseFloat("@Model.Force") || 0;

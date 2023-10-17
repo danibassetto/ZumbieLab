@@ -50,33 +50,33 @@ namespace ZombieLab.Models
             {
                 case EnumBloodType.APositive:
                     Force += 70;
-                    Intelligence += 50;
-                    Velocity += 80;
+                    Intelligence += 70;
+                    Velocity += 70;
                     break;
                 case EnumBloodType.ANegative:
                     Force += 60;
-                    Intelligence += 40;
-                    Velocity += 70;
-                    break;
-                case EnumBloodType.BPositive:
-                    Force += 80;
                     Intelligence += 60;
-                    Velocity += 85;
-                    break;
-                case EnumBloodType.BNegative:
-                    Force += 70;
-                    Intelligence += 50;
-                    Velocity += 75;
-                    break;
-                case EnumBloodType.OPositive:
-                    Force += 40;
-                    Intelligence += 55;
                     Velocity += 60;
                     break;
-                case EnumBloodType.ONegative:
+                case EnumBloodType.BPositive:
+                    Force += 40;
+                    Intelligence += 40;
+                    Velocity += 40;
+                    break;
+                case EnumBloodType.BNegative:
                     Force += 30;
-                    Intelligence += 45;
-                    Velocity += 50;
+                    Intelligence += 30;
+                    Velocity += 30;
+                    break;
+                case EnumBloodType.OPositive:
+                    Force += 20;
+                    Intelligence += 20;
+                    Velocity += 20;
+                    break;
+                case EnumBloodType.ONegative:
+                    Force += 10;
+                    Intelligence += 10;
+                    Velocity += 10;
                     break;
                 case EnumBloodType.ABPositive:
                     Force += 100;
@@ -95,20 +95,20 @@ namespace ZombieLab.Models
             if (Age >= 0 && Age <= 5)
             {
                 Force += 20;
-                Intelligence += 35;
-                Velocity += 40;
+                Intelligence += 10;
+                Velocity += 30;
             }
             else if (Age >= 6 && Age <= 11)
             {
                 Force += 60;
                 Intelligence += 50;
-                Velocity += 70;
+                Velocity += 40;
             }
             else if (Age >= 12 && Age <= 17)
             {
                 Force += 90;
                 Intelligence += 80;
-                Velocity += 95;
+                Velocity += 70;
             }
             else if (Age >= 18 && Age <= 29)
             {
@@ -118,15 +118,15 @@ namespace ZombieLab.Models
             }
             else if (Age >= 30 && Age <= 59)
             {
-                Force += 90;
+                Force += 50;
                 Intelligence += 90;
                 Velocity += 80;
             }
             else
             {
-                Force += 70;
-                Intelligence += 75;
-                Velocity += 60;
+                Force += 40;
+                Intelligence += 70;
+                Velocity += 20;
             }
             #endregion
 
@@ -146,7 +146,7 @@ namespace ZombieLab.Models
                     Intelligence += 60;
                     break;
                 case EnumMusicalTaste.HipHopRap:
-                    Intelligence += 70;
+                    Intelligence += 80;
                     break;
                 case EnumMusicalTaste.Electronics:
                     Intelligence += 90;
@@ -252,7 +252,7 @@ namespace ZombieLab.Models
                     Intelligence += 40;
                     break;
                 case EnumFavoriteGame.Dota:
-                    Intelligence += 60;
+                    Intelligence += 20;
                     break;
                 case EnumFavoriteGame.RocketLeague:
                     Intelligence += 30;
@@ -274,22 +274,22 @@ namespace ZombieLab.Models
                 case EnumSportPlayed.Basketball:
                     Force += 90;
                     Intelligence += 80;
-                    Velocity += 100;
+                    Velocity += 70;
                     break;
                 case EnumSportPlayed.Volleyball:
                     Force += 80;
                     Intelligence += 90;
-                    Velocity += 70;
+                    Velocity += 60;
                     break;
                 case EnumSportPlayed.Fight:
                     Force += 100;
-                    Intelligence += 70;
-                    Velocity += 50;
+                    Intelligence += 60;
+                    Velocity += 30;
                     break;
                 case EnumSportPlayed.Athletics:
                     Force += 90;
-                    Intelligence += 80;
-                    Velocity += 90;
+                    Intelligence += 70;
+                    Velocity += 80;
                     break;
                 case EnumSportPlayed.eSports:
                     Force += 30;

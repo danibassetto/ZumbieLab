@@ -3,7 +3,7 @@
 <head>
     @model HostModel
 </head>
-<body>
+<body class="dusk-chip">
     <h2>Informações para importação no chip</h2>
 
     <h3>Score de periculosidade:  @Model.DangerScore</h3>
@@ -14,25 +14,21 @@
     <section class="ponto-fraco">
         @if (Model.Force <= 50)
         {
-            <img src="~/image/academia.png" alt="Força">
+            <img src="~/image/academia.png" alt="Força" title="Força">
         }
         @if (Model.Intelligence <= 65)
         {
-            <img src="~/image/cerebro.png" alt="Inteligência">
+            <img src="~/image/cerebro.png" alt="Inteligência" title="Inteligência">
         }
         @if (Model.Velocity <= 60)
         {
-            <img src="~/image/corrida.png" alt="Velocidade">
+            <img src="~/image/corrida.png" alt="Velocidade" title="Velocidade">
         }
         @if (Model.Force > 50 && Model.Intelligence > 65 && Model.Velocity > 60)
         {
             <p>Nenhum, por isso será necessário combinar seus ataques!!</p>
         }
     </section>
-
-    <br/>
-    <canvas id="barChart"></canvas>
-    <br />
 
     <h4>Defesa</h4>
     <section class="ataque-defesa">
@@ -74,41 +70,5 @@
             <img src="~/image/jato-agua.jpeg" alt="Jato d'Água'">
         }
     </section>
-
-    <script>
-        var dangerScore = parseFloat("@Model.DangerScore") || 0;
-
-        var ctx = document.getElementById('barChart').getContext('2d');
-
-        var data = {
-            labels: ['Periculosidade'],
-            datasets: [{
-                label: 'Valores',
-                data: [dangerScore],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.5)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)'
-                ],
-                borderWidth: 1
-            }]
-        };
-
-        var options = {
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    max: 100
-                }
-            }
-        };
-
-        var barChart = new Chart(ctx, {
-            type: 'bar',
-            data: data,
-            options: options
-        });
-    </script>
 </body>
 </html>

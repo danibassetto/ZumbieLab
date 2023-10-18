@@ -48,6 +48,7 @@ body {
     background-image: url("../image/home.png");
     background-size: cover;
     background-repeat: no-repeat;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .info{
@@ -95,4 +96,16 @@ body {
 
 .ponto-fraco img {
     width: 10%;
+}
+
+.ataque-defesa-info {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.ataque-defesa-info img {
+    width: 20%;
 }

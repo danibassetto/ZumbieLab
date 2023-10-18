@@ -31,5 +31,49 @@
             }
         </tbody>
     </table>
+
+    <canvas id="barChart" width="200" height="100"></canvas>
+
+    <script>
+        var forceValue = parseFloat("@Model.Force") || 0;
+        var intelligenceValue = parseFloat("@Model.Intelligence") || 0;
+        var velocityValue = parseFloat("@Model.Velocity") || 0;
+
+        var ctx = document.getElementById('barChart').getContext('2d');
+
+        var data = {
+            labels: ['Força', 'Inteligência', 'Velocidade'],
+            datasets: [{
+                label: 'Valores',
+                data: [forceValue, intelligenceValue, velocityValue],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(255, 205, 86, 0.5)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 205, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        var options = {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100
+                }
+            }
+        };
+
+        var barChart = new Chart(ctx, {
+            type: 'radar',
+            data: data,
+            options: options
+        });
+    </script>
 </body>
 </html>

@@ -10,14 +10,33 @@
 
     <h6>Força: @Model.Force  Inteligência: @Model.Intelligence  Velocidade: @Model.Velocity</h6>
 
-    <canvas id="barChart" width="200" height="100"></canvas>
+    <h4>Pontos Fracos: </h4>
+    <section class="ponto-fraco">
+        @if (Model.Force <= 50)
+        {
+            <img src="~/image/academia.png" alt="Força">
+        }
+        @if (Model.Intelligence <= 65)
+        {
+            <img src="~/image/cerebro.png" alt="Inteligência">
+        }
+        @if (Model.Velocity <= 60)
+        {
+            <img src="~/image/corrida.png" alt="Velocidade">
+        }
+        @if (Model.Force > 50 && Model.Intelligence > 65 && Model.Velocity > 60)
+        {
+            <p>Nenhum, por isso será necessário combinar seus ataques!!</p>
+        }
+    </section>
+
+    <br/>
+    <canvas id="barChart"></canvas>
     <br />
 
-    <h3>Defesa: </h3>
-    <br />
-
+    <h4>Defesa</h4>
     <section class="ataque-defesa">
-        @if (Model.Force <= 50 && Model.Intelligence <= 60 && Model.Velocity <= 60)
+        @if (Model.Force <= 50 && Model.Intelligence <= 65 && Model.Velocity <= 60)
         {
             <img src="~/image/modo-flash.jpeg" alt="Modo Flash">
         }
@@ -25,7 +44,7 @@
         {
             <img src="~/image/escudo.jpeg" alt="Escudo Anti-Força">
         }
-        @if (Model.Intelligence > 60)
+        @if (Model.Intelligence > 65)
         {
             <img src="~/image/camuflagem.jpeg" alt="Camuflagem Inteligente">
         }
@@ -36,10 +55,9 @@
     </section>
 
     <br />
-    <h3>Ataque: </h3>
-    <br />
+    <h4>Ataque</h4>
     <section class="ataque-defesa">
-        @if (Model.Force <= 50 && Model.Intelligence <= 60 && Model.Velocity <= 60)
+        @if (Model.Force <= 50 && Model.Intelligence <= 65 && Model.Velocity <= 60)
         {
             <img src="~/image/investida-simples.jpeg" alt="Investida Simples">
         }
@@ -47,7 +65,7 @@
         {
             <img src="~/image/investida-grupo.jpeg" alt="Investida em Grupo">
         }
-        @if (Model.Intelligence > 60)
+        @if (Model.Intelligence > 65)
         {
             <img src="~/image/armadilha-surpresa.jpeg" alt="Armadilha Surpresa">
         }
@@ -57,32 +75,21 @@
         }
     </section>
 
-    
-
     <script>
-        var forceValue = parseFloat("@Model.Force") || 0;
-        var intelligenceValue = parseFloat("@Model.Intelligence") || 0;
-        var velocityValue = parseFloat("@Model.Velocity") || 0;
         var dangerScore = parseFloat("@Model.DangerScore") || 0;
 
         var ctx = document.getElementById('barChart').getContext('2d');
 
         var data = {
-            labels: ['Periculosidade', 'Força', 'Inteligência', 'Velocidade'],
+            labels: ['Periculosidade'],
             datasets: [{
                 label: 'Valores',
-                data: [dangerScore, forceValue, intelligenceValue, velocityValue],
+                data: [dangerScore],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.5)',
-                    'rgba(54, 162, 235, 0.5)',
-                    'rgba(75, 192, 192, 0.5)',
-                    'rgba(255, 205, 86, 0.5)'
+                    'rgba(255, 99, 132, 0.5)'
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(255, 205, 86, 1)'
+                    'rgba(255, 99, 132, 1)'
                 ],
                 borderWidth: 1
             }]

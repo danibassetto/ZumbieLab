@@ -84,3 +84,15 @@ body {
 .ataque-defesa img {
     width: 30%;
 }
+
+.ponto-fraco {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.ponto-fraco img {
+    width: 10%;
+}

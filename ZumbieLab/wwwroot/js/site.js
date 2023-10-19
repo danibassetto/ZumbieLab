@@ -2,7 +2,7 @@
     getDataTable('#user-table')
     getDataTable('#host-table')
 
-    $('.btn-show-attributes').click(function () {
+    $(document).on('click', '.btn-show-attributes', function () {
         var userId = $(this).attr('user-id');
 
         $.ajax({
@@ -14,7 +14,8 @@
             }
         });
     });
-    $('.btn-duck-chip').click(function () {
+
+    $(document).on('click', '.btn-duck-chip', function () {
         var userId = $(this).attr('user-id');
 
         $.ajax({

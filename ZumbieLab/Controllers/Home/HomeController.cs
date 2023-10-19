@@ -1,16 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using ZombieLab.Models;
+using ZombieLab.Repositories;
 
 namespace ZombieLab.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController() { }
+        private readonly IHostRepository _hostRepository;
+        public HomeController(IHostRepository hostRepository) 
+        { 
+            _hostRepository = hostRepository;
+        }
 
         public IActionResult Index()
         {
-            return View();
+            int host = _hostRepository.GetAll().Count;
+            return View(host);
         }
 
         public IActionResult Info() 

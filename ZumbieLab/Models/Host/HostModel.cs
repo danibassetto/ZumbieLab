@@ -19,7 +19,7 @@ namespace ZombieLab.Models
         [Range(1, int.MaxValue, ErrorMessage = "O peso deve ser maior que zero!")]
         public decimal? Weight { get; set; }
         [Required(ErrorMessage = "Informe a altura")]
-        [Column(TypeName = "decimal(4,2)")]
+        [Column(TypeName = "decimal(5,2)")]
         [Range(1, int.MaxValue, ErrorMessage = "A altura deve ser maior que zero!")]
         public decimal? Height { get; set; }
         [Required(ErrorMessage = "Informe o tipo sanguíneo")]

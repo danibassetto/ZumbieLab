@@ -44,10 +44,11 @@ namespace ZombieLab.Repositories
         {
             HostModel updateHost = Get(host.Id) ?? throw new Exception("Hospedeiro inválido ou inexistente");
 
-            updateHost.Age = host.Age;
+            updateHost.Age = host.Age;            
             updateHost.Gender = host.Gender;
             updateHost.Weight = host.Weight;
             updateHost.Height = host.Height;
+            updateHost.BloodType = host.BloodType;
             updateHost.MusicalTaste = host.MusicalTaste;
             updateHost.SportPlayed = host.SportPlayed;
             updateHost.FavoriteGame = host.FavoriteGame;

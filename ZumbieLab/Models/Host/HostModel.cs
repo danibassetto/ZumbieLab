@@ -21,7 +21,7 @@ namespace ZombieLab.Models
         [Required(ErrorMessage = "Informe a altura")]
         [Column(TypeName = "decimal(4,2)")]
         [Range(1, int.MaxValue, ErrorMessage = "A altura deve ser maior que zero!")]
-        public decimal Height { get; set; }
+        public decimal? Height { get; set; }
         [Required(ErrorMessage = "Informe o tipo sanguíneo")]
         public EnumBloodType? BloodType { get; set; }
         [Required(ErrorMessage = "Informe o gosto musical")]

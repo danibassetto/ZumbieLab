@@ -56,8 +56,12 @@
                             <td>@(user.ChangeDate != null ? user.ChangeDate.ToString() : "N/A")</td>
                             <td>
                                 <div class="btn-group" role="group">
-                                    <a role="button" class="btn btn-primary" asp-route-id="@user.Id" asp-controller="User" asp-action="Update">Editar</a>
-                                    <a role="button" class="btn btn-danger" asp-route-id="@user.Id" asp-controller="User" asp-action="DeleteConfirmation">Excluir</a>
+                                    <a role="button" class="btn btn-primary" asp-route-id="@user.Id" asp-controller="User" asp-action="Update" title="Editar">
+                                        <i class="bi bi-pencil-square fs-6"></i>
+                                    </a>
+                                    <a role="button" class="btn btn-danger" asp-route-id="@user.Id" asp-controller="User" asp-action="DeleteConfirmation" title="Excluir">
+                                        <i class="bi bi-trash fs-6"></i>
+                                    </a>
                                 </div>
                             </td>
                         </tr>

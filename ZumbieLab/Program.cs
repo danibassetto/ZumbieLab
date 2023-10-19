@@ -41,12 +41,12 @@ if (!dbContext.Database.CanConnect())
 {
     // Create the database if it doesn't exist
     dbContext.Database.EnsureCreated();
-    // Read the SQL script file
-    var scriptFilePath = Path.Combine(AppContext.BaseDirectory, "Scripts", "ZombieLab.sql");
-    var script = File.ReadAllText(scriptFilePath);
+    //// Read the SQL script file
+    //var scriptFilePath = Path.Combine(AppContext.BaseDirectory, "Scripts", "ZombieLab.sql");
+    //var script = File.ReadAllText(scriptFilePath);
 
-    // Execute the script to create the database
-    dbContext.Database.ExecuteSqlRaw(script);
+    //// Execute the script to create the database
+    dbContext.Database.ExecuteSqlRaw("INSERT INTO usuario VALUES (1, 'Admin', 'admin', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'informeseuemail@dominio.com', NOW(), NULL)");
 }
 
 // Configure the HTTP request pipeline.

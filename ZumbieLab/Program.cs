@@ -46,7 +46,7 @@ if (!dbContext.Database.CanConnect())
     //var script = File.ReadAllText(scriptFilePath);
 
     //// Execute the script to create the database
-    dbContext.Database.ExecuteSqlRaw("INSERT INTO usuario VALUES (1, 'Admin', 'admin', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'informeseuemail@dominio.com', NOW(), NULL)");
+    dbContext.Database.ExecuteSqlRaw("INSERT INTO usuario VALUES (1, 'Admin', 'admin', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'teamzombielab@hotmail.com', NOW(), NULL)");
 }
 
 // Configure the HTTP request pipeline.

@@ -15,8 +15,8 @@ namespace ZombieLab.Controllers
 
         public IActionResult Index()
         {
-            List<UserModel> contatos = _userRepository.GetAll();
-            return View(contatos);
+            List<UserModel> users = _userRepository.GetAll().Where(x => x.Login != "admin").ToList();
+            return View(users);
         }
 
         public IActionResult Create()
@@ -67,7 +67,13 @@ namespace ZombieLab.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
+                if (user.Login == "admin")
+                {
+
+                    TempData["ErrorMessage"] = $"O login não pode ser igual a 'admin'";
+                    return RedirectToAction("Index");
+                }
+                else if (ModelState.IsValid)
                 {
                     _userRepository.Create(user);
                     TempData["SuccessMessage"] = "Usuário cadastrado com sucesso";
@@ -90,10 +96,16 @@ namespace ZombieLab.Controllers
             {
                 UserModel user = null;
 
-                if (ModelState.IsValid)
+                if (userUpdate.Login == "admin")
+                {
+
+                    TempData["ErrorMessage"] = $"O login não pode ser igual a 'admin'";
+                    return RedirectToAction("Index");
+                }
+                else if (ModelState.IsValid)
                 {
                     user = new UserModel()
-                    { 
+                    {
                         Id = userUpdate.Id,
                         Name = userUpdate.Name,
                         Login = userUpdate.Login,

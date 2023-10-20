@@ -83,7 +83,7 @@ namespace ZombieLab.Controllers
                     {
                         string newPassword = user.GenerateNewPassword();                        
                         string message = $"Sua nova senha é: {newPassword}";
-                        bool emailSent = _email.Send(user.Email, "Sistema de Contatos - Nova Senha", message);
+                        bool emailSent = _email.Send(user.Email, "ZombieLab - Nova Senha", message);
 
                         if(emailSent)
                         {

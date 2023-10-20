@@ -30,11 +30,11 @@
             </div>
             <div class="col-md-3 me-2">
                 <label for="weight">Peso</label> @Html.ValidationMessageFor(x => x.Weight)
-                <input type="text" step="0,01" asp-for="Weight" class="form-control" placeholder="Informe o peso Ex: 50.7">
+                <input type="text" asp-for="Weight" class="form-control" placeholder="Informe o peso Ex: 50.7" oninput="blockComma(this)">
             </div>
             <div class="col-md-3 me-2">
                 <label for="height">Altura</label> @Html.ValidationMessageFor(x => x.Height)
-                <input type="text" step="0,01" asp-for="Height" class="form-control" placeholder="Informe a altura Ex: 1.68">
+                <input type="text" asp-for="Height" class="form-control" placeholder="Informe a altura Ex: 1.68" oninput="blockComma(this)">
             </div>
         </div>    
         <br />
@@ -116,5 +116,11 @@
             <a class="btn btn-danger" role="button" asp-controller="Host" asp-action="Index">Cancelar</a>
         </div>
     </form>
+
+    <script>
+        function blockComma(input) {
+            input.value = input.value.replace(',', '.');
+        }
+    </script>
 </body>
 </html>
